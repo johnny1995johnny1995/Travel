@@ -19,11 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('/redirect', 'FacebookController@redirect');
-// Route::get('/callback', 'FacebookController@callback');
-
+// FB登入
 Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider')->name('fbLogin');
 Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
+
 
 Route::get('/logout', function(){
     Auth::logout();

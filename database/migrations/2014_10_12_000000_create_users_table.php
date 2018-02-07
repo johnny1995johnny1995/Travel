@@ -15,9 +15,10 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('fb_id');
+            $table->string('fb_id')->unique();
             $table->string('email');
             $table->string('name');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
